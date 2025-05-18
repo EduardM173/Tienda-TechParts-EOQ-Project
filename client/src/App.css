@@ -1,0 +1,221 @@
+:root {
+  --primary: #4fc3f7;
+  --primary-dark: #0288d1;
+  --primary-light: #b3e5fc;
+  --secondary: #607d8b;
+  --secondary-dark: #455a64;
+  --secondary-light: #cfd8dc;
+  --accent: #00bcd4;
+  --background: #f5f7fa;
+  --card-bg: #ffffff;
+  --text-primary: #263238;
+  --text-secondary: #546e7a;
+  --success: #66bb6a;
+  --warning: #ffa726;
+  --danger: #ef5350;
+  --info: #26c6da;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background);
+  color: var(--text-primary);
+}
+
+/* Sidebar Moderno */
+#sidebar {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--secondary-dark), var(--secondary));
+  color: white;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-header {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-header h4 {
+  font-weight: 500;
+  margin-bottom: 0;
+  color: white;
+}
+
+.sidebar-header .logo {
+  font-size: 24px;
+  margin-right: 10px;
+  color: var(--primary-light);
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  margin: 5px 10px;
+  padding: 12px 15px;
+  transition: all 0.3s ease;
+  font-weight: 400;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  transform: translateX(5px);
+}
+
+.nav-link.active {
+  background: var(--primary);
+  color: white;
+  font-weight: 500;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link i {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+/* Main Content */
+main {
+  padding-top: 20px;
+  background-color: var(--background);
+}
+
+.page-header {
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid var(--secondary-light);
+}
+
+.page-header h1, .page-header h2 {
+  font-weight: 500;
+  color: var(--secondary-dark);
+}
+
+/* Tarjetas Modernas */
+.card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 25px;
+  background-color: var(--card-bg);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  background-color: var(--card-bg);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  font-weight: 500;
+  padding: 15px 20px;
+  border-radius: 10px 10px 0 0 !important;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+/* Dashboard Cards */
+.metric-card {
+  border-left: 4px solid;
+  overflow: hidden;
+  position: relative;
+}
+
+.metric-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+  z-index: 0;
+}
+
+.metric-card .card-body {
+  position: relative;
+  z-index: 1;
+}
+
+.metric-card.primary {
+  border-left-color: var(--primary);
+  background: linear-gradient(135deg, var(--primary-light), white);
+}
+
+.metric-card.success {
+  border-left-color: var(--success);
+  background: linear-gradient(135deg, #c8e6c9, white);
+}
+
+.metric-card.warning {
+  border-left-color: var(--warning);
+  background: linear-gradient(135deg, #ffe0b2, white);
+}
+
+.metric-card.danger {
+  border-left-color: var(--danger);
+  background: linear-gradient(135deg, #ffcdd2, white);
+}
+
+.metric-card .metric-value {
+  font-size: 28px;
+  font-weight: 500;
+  margin: 10px 0;
+  color: var(--text-primary);
+}
+
+.metric-card .metric-title {
+  font-size: 14px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.metric-card .metric-icon {
+  font-size: 40px;
+  opacity: 0.2;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  color: var(--text-primary);
+}
+
+.stock-chart-container {
+  position: relative;
+  width: 100px;
+  height: 50px;
+  margin: 0 auto;
+}
+
+.stock-chart-container canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+/* fijas el ancho y altura total */
+/* fija el ancho y posición del sidebar */
+/* Sidebar fijo */
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;     /* o el ancho de tu sidebar */
+  height: 100vh;
+  overflow-y: auto;
+}
+
+/* Contenido principal */
+.main-content {
+  margin-left: 250px;                  /* igual que el width del sidebar */
+  padding: 20px;
+  width: calc(100% - 250px);
+  background: var(--background);
+  min-height: 100vh;
+}
